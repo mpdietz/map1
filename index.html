@@ -232,15 +232,15 @@ var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.
   // marker.bindPopup("<b>Hello world!</b><br>I am a popup.")
   //Now let's use our custom-made array to make many markers
 
-  myMapData.forEach(function(element) {
-    var marker = L.marker(element.coord).addTo(map);
-    marker.bindPopup(element.name + "<b> </b>" + '<div class ="galleryimg">' + "<img src =" + element.url + "/>" +  '</div>')
-  });
-
-  // galleryimages.forEach(function(element) {
-  //   var marker = L.marker(element.geolocation).addTo(map);
-  //   marker.bindPopup("<b>Hello world!</b><br>I am " + element.title)
+  // myMapData.forEach(function(element) {
+  //   var marker = L.marker(element.coord).addTo(map);
+  //   marker.bindPopup(element.name + "<b> </b>" + '<div class ="galleryimg">' + "<img src =" + element.url + ">" +  '</div>')
   // });
+
+  galleryimages.forEach(function(element) {
+    var marker = L.marker(element.geolocation).addTo(map);
+    marker.bindPopup(element.title + "<b> </b>" + '<div class ="galleryimg">' + "<img src =" + element.url + ">" +  '</div>')
+  });
 
   var panOptions = {
     animate: true,
