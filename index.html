@@ -234,7 +234,7 @@ var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.
 
   myMapData.forEach(function(element) {
     var marker = L.marker(element.coord).addTo(map);
-    marker.bindPopup(element.name + "<b> </b>" + '<div class ="galleryimg">' + "<img src =" + url + "/>" +  '</div>')
+    marker.bindPopup(element.name + "<b> </b>" + '<div class ="galleryimg">' + "<img src =" + element.url + "/>" +  '</div>')
   });
 
   // galleryimages.forEach(function(element) {
