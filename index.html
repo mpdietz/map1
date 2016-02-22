@@ -198,7 +198,7 @@ galleyimages[9] = Sunset;
   console.log(galleyimages.CentralPark.title);
 
 galleyimages.forEach(function(galleryimages) {
-    $('#galleyimages').append('<div class ="galleryimg">' + '<img src =' (element.url)'>' + '</div>');
+    $('#galleyimages').append('<div class ="galleryimg">' + '<img src =' + (element.url) + '>' + '</div>');
   });
 
 
@@ -241,7 +241,7 @@ var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.
   // var marker = L.marker([40.768058,-73.981891]).addTo(map);
   // marker.bindPopup("<b>Hello world!</b><br>I am a popup.")
   //Now let's use our custom-made array to make many markers
-  
+
   // myMapData.forEach(function(element) {
   //   var marker = L.marker(element.coord).addTo(map);
   //   marker.bindPopup("<b>Hello world!</b><br>I am " + element.name)
