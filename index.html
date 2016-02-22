@@ -23,7 +23,7 @@
       font-size: 24px;
     }*/
     #myMap {
-      width: 80%;
+      width: 100%;
       height: 300px;
       background-color: gray;
     }
@@ -198,6 +198,10 @@ map.addLayer(layer)
 
         });
     });
+
+  galleryimg.click(function() {
+    map.panTo($galleryimg.url),panOptions);
+  });
 
     // marker.click(function() {
     //     map.panTo($(this).url, panOptions);
