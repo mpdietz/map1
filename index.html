@@ -182,6 +182,7 @@
     geolocation: [40.733161,-74.010901],
     
   }
+var galleyimages = [];
 
 galleyimages[0] = BrooklynBridge;
 galleyimages[1] = CentralPark;
@@ -197,16 +198,17 @@ galleyimages[9] = Sunset;
   console.log(galleyimages.CentralPark.title);
 
 galleyimages.forEach(function(galleryimages) {
-    $('#galleyitem').append('<div class ="galleryimg">' + '<img src = (element.url)>' + '</div>');
-var galleryimages = L.marker(element.geolocation).addTo(map);
-    marker.bindPopup( element.title)
+    $('#galleyimages').append('<div class ="galleryimg">' + '<img src =' (element.url)'>' + '</div>');
   });
 
 
   //CartoDB Basemap
-  var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',{
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
-  });
+  var map = L.map('myMap').setView([40.7127837, -74.0059413], 11);
+
+var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+});
+
   var myMapData = [
     {
       name: "Joe's Pizza",
@@ -239,10 +241,18 @@ var galleryimages = L.marker(element.geolocation).addTo(map);
   // var marker = L.marker([40.768058,-73.981891]).addTo(map);
   // marker.bindPopup("<b>Hello world!</b><br>I am a popup.")
   //Now let's use our custom-made array to make many markers
-  myMapData.forEach(function(element) {
-    var marker = L.marker(element.coord).addTo(map);
-    marker.bindPopup("<b>Hello world!</b><br>I am " + element.name)
+  
+  // myMapData.forEach(function(element) {
+  //   var marker = L.marker(element.coord).addTo(map);
+  //   marker.bindPopup("<b>Hello world!</b><br>I am " + element.name)
+  // });
+
+  gallerimages.forEach(function(element) {
+    var marker = L.marker(element.geolocation).addTo(map);
+    marker.bindPopup("<b>Hello world!</b><br>I am " + element.title)
   });
+
+
   var panOptions = {
     animate: true,
     duration: 2
