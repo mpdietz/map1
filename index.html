@@ -138,7 +138,7 @@
 ]
 
 galleryimages.forEach(function(element) {
-    $('#gallery').append('<div class ="galleryimg">' + '<img src =' + element.url + " width='300' height='300'/>" + '</div>');
+    $('#gallery').append('<img src =' + element.url + " width='300' height='300'/>");
   });
 
 
@@ -184,9 +184,9 @@ var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.
     animate: true,
     duration: 2
   }
-    marker.click(function() {
-        map.panTo($(this).url, panOptions);
-    });
+    // marker.click(function() {
+    //     map.panTo($(this).url, panOptions);
+    // });
 
   </script>
 </body>
