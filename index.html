@@ -46,7 +46,7 @@
 </head>
 
 <body>
-  <h1>Check out these items that I loaded from an array:</h1>
+  <h1>Check out my photo map</h1>
   <div id='galleryimg'></div>
 
 
@@ -174,7 +174,8 @@ var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.
 
   galleryimages.forEach(function(element) {
     var marker = L.marker(element.geolocation).addTo(map);
-    marker.bindPopup(element.title + "<b> </b>" + '<div class ="galleryimg">' + "<img src =" + element.url + ">" +  '</div>')
+    marker.bindPopup(element.title + "<b> </b>" + '<div class ="galleryimg">' + "<img src =" + element.url + " width="300" height="300"/>" + 
+     '</div>')
   });
 
   var panOptions = {
