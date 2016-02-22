@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Tricia Dietz - Photos</title>
-  <meta name="description" content="Tricia Dietz - Photos">
-  <meta name="Tricia Dietz" content="SitePoint">
+  <title>Tricia Dietz</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
 
   <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
 
@@ -18,21 +18,15 @@
     body, html {
       font-family: sans-serif;
     }
-    .arrayItem {
+/*    .arrayItem {
       color: steelblue;
       font-size: 24px;
-    }
+    }*/
     #myMap {
       width: 100%;
       height: 500px;
       background-color: gray;
     }
-
-  #galleryimg{
-
-  width: "300"; 
-  height:"300";
- }
     button {
       width: 200px;
       height: 73px;
@@ -45,23 +39,12 @@
 </head>
 
 <body>
-  <div class = "header">
-</div>
-    <h2>
-    Tricias Photos
-    </h2>
-<div id = "introparagraph">
-<p>
-The various images below are photos taken on Tricia various travels. 
-</p>
-</div>
-<div class = "header">
-</div>
+  <h1>Check out these items that I loaded from an array:</h1>
+  <div id='arrayItems'></div>
 
-  <div id="galleryimg"></div>
 
-<!--   <button id="one" class="myButton">One!</button>
-  <button id="two" class="myButton">Two!</button> -->
+  <button id="one" class="myButton">One!</button>
+  <button id="two" class="myButton">Two!</button>
 
   <div id="myMap"></div>
 
@@ -96,7 +79,7 @@ The various images below are photos taken on Tricia various travels.
   // console.log('Output: ', output);
   // var output2 = addFive('five');
   // console.log('Output: ', output2);
-  //arrays
+  // //arrays
   // var myArray = ['apple','orange','banana',5,12];  
   // console.log(myArray);
   // //how to call an element in an array
@@ -107,101 +90,19 @@ The various images below are photos taken on Tricia various travels.
   //   console.log('walking the array', item);
   //   $('#arrayItems').append('<div class="arrayItem">' + item + '</div><br/>');
   // });
-
-
-  //objects
-  //object for Chris Whong
-  var BrooklynBridge = {
-    title: 'Brooklyn Bridge, New York City',
-    caption: '',
-    url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140825_001017_small.jpg',
-    geolocation: [40.707385,-73.986568],
-    
-  }
-
-   var CentralPark = {
-    title: 'Central Park, New York City',
-    caption: '',
-    url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20150127_184501_small.jpg',
-    geolocation: [40.786066,-73.967857],
-    
-  }
-
-   var Gaustavino = {
-    title: 'Gaustavino Subway Entrance, New York City',
-    caption: '',
-    url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/IMG_20150118_122828_small.jpg',
-    geolocation: [40.715582,-73.996181],
-    
-  }
-
-    var LowerEastSide = {
-    title: 'Lower East Side Roofs, New York City',
-    caption: '',
-    url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140913_142838_small.jpg',
-    geolocation: [40.718835,-73.988800],
-      }
-
-   var DelancyStreet = {
-    title: 'Delancy Street, New York City',
-    caption: '',
-    url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140916_150207_small.jpg',
-    geolocation: [40.717664,-73.984509],
-    
-  }
-
-   var PublicArt = {
-    title: 'Public Art',
-    caption: '',
-    url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/IMG_20150118_122828_small.jpg',
-    geolocation: [40.721486,-73.991890],
-    
-  }
-
-    var Skyline = {
-    title: 'Skyline, New York City',
-    caption: '',
-    url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20150501_200113_small.jpg',
-    geolocation: [40.646913,-74.075661],
-    
-  }
-
-    var Subway = {
-    title: 'Subway - Years of Infrastructure, New York City',
-    caption: '',
-    url: 'http://trulydietz.com/home/wp-content/uploads/2014/10/PSX_20140926_213329.jpg',
-    geolocation: [40.657592,-73.931465],
-    
-  }
-
-    var MoveableChairs= {
-    title: 'Moveable Chairs- New York City',
-    caption: '',
-    url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140831_012614_small.jpg',
-    geolocation: [40.742786,-74.008327],
-    
-  }
-
-    var Sunset= {
-    title: 'Sunset Over the Hudson',
-    caption: '',
-    url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140831_012405_small.jpg',
-    geolocation: [40.733161,-74.010901],
-    
-  }
-
-var galleyimages = [BrooklynBridge, CentralPark, Gaustavino, LowerEastSide, DelancyStreet, PublicArt, Skyline, Subway, MoveableChairs, Sunset]; 
-  console.log(galleyimages); 
-
-  //how to call an element in an array
-  var firstElement = galleyimages[1];
-  console.log('2nd:',firstElement);
-  //loop  "walk the array"
-galleyimages.forEach(function(item) {
-    console.log('walking the array', item);
-    $('#galleryimages').append('<div class="galleryimg">' + '<img src=' + url + '>' + '</div><br/>');
-  });
-
+  // //objects
+  // //object for Chris Whong
+  // var myObject = {
+  //   firstName: 'Chris',
+  //   lastName: 'Whong',
+  //   age: 35,
+  //   studied: 'Urban Planning',
+  //   students: [
+  //     'Felix',
+  //     'Ashley'
+  //   ]
+  // }
+  // console.log(myObject.students[1]);
   //CartoDB Basemap
   var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',{
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
@@ -220,7 +121,14 @@ galleyimages.forEach(function(item) {
       coord: [40.729600, -73.958695]
     },
   ]
-
+//   //Stamen Watercolor Basemap
+//   var Stamen_Watercolor = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
+//   attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+//   subdomains: 'abcd',
+//   minZoom: 1,
+//   maxZoom: 16,
+//   ext: 'png'
+// });
   var eastRiver = [40.706913,-73.987513];
   var upperWestSide = [40.788129,-73.974509];
   var myZoom = 13;
