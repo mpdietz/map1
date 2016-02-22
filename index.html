@@ -23,7 +23,7 @@
       font-size: 24px;
     }*/
     #myMap {
-      width: 100%;
+      width: 80%;
       height: 300px;
       background-color: gray;
     }
@@ -42,12 +42,17 @@
       height:"300";
      }
 
+     #gallery {
+      width: 100%;
+     }
+
+
   </style>
 </head>
 
 <body>
   <h1>Check out my photo map</h1>
-  <div id='galleryimg'></div>
+  <div id='gallery'></div>
 
 
   <div id="myMap"></div>
@@ -57,6 +62,7 @@
   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   <script type="text/javascript">
 
+// photo gallery
  var galleryimages = [
 
   {
@@ -64,21 +70,18 @@
     caption: '',
     url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140825_001017_small.jpg',
     geolocation: [40.707385,-73.986568],
-    
   },
   {
     title: 'Central Park, New York City',
     caption: '',
     url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20150127_184501_small.jpg',
     geolocation: [40.786066,-73.967857],
-    
   },
   {
     title: 'Gaustavino Subway Entrance, New York City',
     caption: '',
     url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/IMG_20150118_122828_small.jpg',
     geolocation: [40.715582,-73.996181],
-    
   },
 
    {
@@ -87,13 +90,11 @@
     url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140913_142838_small.jpg',
     geolocation: [40.718835,-73.988800],
       },
-
    {
     title: 'Delancy Street, New York City',
     caption: '',
     url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140916_150207_small.jpg',
     geolocation: [40.717664,-73.984509],
-    
   },
 
    {
@@ -101,7 +102,6 @@
     caption: '',
     url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/IMG_20150118_122828_small.jpg',
     geolocation: [40.721486,-73.991890],
-    
   },
 
    {
@@ -137,8 +137,8 @@
   }
 ]
 
-galleryimages.forEach(function(galleryimages) {
-    $('#galleryimg').append('<div class ="galleryimg">' + '<img src =' + galleryimages.url + " width='300' height='300'/>" + '</div>');
+galleryimages.forEach(function(element) {
+    $('#gallery').append('<div class ="galleryimg">' + '<img src =' + element.url + " width='300' height='300'/>" + '</div>');
   });
 
 
@@ -148,29 +148,31 @@ var map = L.map('myMap').setView([40.7127837, -74.0059413], 11);
 var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
 });
-  map.addLayer(layer)
-  var myMapData = [
-    {
-      name: "Sunset Over the Hudson",
-      coord: [40.733161,-74.010901],
-      url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140831_012405_small.jpg',
-    },
-    {
-      name: "Moveable Chairs- New York City",
-      coord: [40.742786,-74.008327],
-      url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140831_012614_small.jpg',
-    },
-    {
-      name: "Subway - Years of Infrastructure, New York City",
-      coord: [40.657592,-73.931465],
-      url: 'http://trulydietz.com/home/wp-content/uploads/2014/10/PSX_20140926_213329.jpg'
-    },
-  ]
 
-  // myMapData.forEach(function(element) {
-  //   var marker = L.marker(element.coord).addTo(map);
-  //   marker.bindPopup(element.name + "<b> </b>" + '<div class ="galleryimg">' + "<img src =" + element.url + ">" +  '</div>')
-  // });
+      // Good for testing map markers
+        // map.addLayer(layer)
+        // var myMapData = [
+        //   {
+        //     name: "Sunset Over the Hudson",
+        //     coord: [40.733161,-74.010901],
+        //     url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140831_012405_small.jpg',
+        //   },
+        //   {
+        //     name: "Moveable Chairs- New York City",
+        //     coord: [40.742786,-74.008327],
+        //     url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140831_012614_small.jpg',
+        //   },
+        //   {
+        //     name: "Subway - Years of Infrastructure, New York City",
+        //     coord: [40.657592,-73.931465],
+        //     url: 'http://trulydietz.com/home/wp-content/uploads/2014/10/PSX_20140926_213329.jpg'
+        //   },
+        // ]
+
+        // myMapData.forEach(function(element) {
+        //   var marker = L.marker(element.coord).addTo(map);
+        //   marker.bindPopup(element.name + "<b> </b>" + '<div class ="galleryimg">' + "<img src =" + element.url + ">" +  '</div>')
+        // });
 
   galleryimages.forEach(function(element) {
     var marker = L.marker(element.geolocation).addTo(map);
