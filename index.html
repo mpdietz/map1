@@ -111,23 +111,23 @@
   // }
   // console.log(myObject.students[1]);
 
-  var BrooklynBridge = {
+  var galleyimages = [
+
+  {
     title: 'Brooklyn Bridge, New York City',
     caption: '',
     url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140825_001017_small.jpg',
     geolocation: [40.707385,-73.986568],
     
   }
-
-   var CentralPark = {
+  {
     title: 'Central Park, New York City',
     caption: '',
     url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20150127_184501_small.jpg',
     geolocation: [40.786066,-73.967857],
     
   }
-
-   var Gaustavino = {
+  {
     title: 'Gaustavino Subway Entrance, New York City',
     caption: '',
     url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/IMG_20150118_122828_small.jpg',
@@ -135,14 +135,14 @@
     
   }
 
-    var LowerEastSide = {
+   {
     title: 'Lower East Side Roofs, New York City',
     caption: '',
     url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140913_142838_small.jpg',
     geolocation: [40.718835,-73.988800],
       }
 
-   var DelancyStreet = {
+   {
     title: 'Delancy Street, New York City',
     caption: '',
     url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140916_150207_small.jpg',
@@ -150,7 +150,7 @@
     
   }
 
-   var PublicArt = {
+   {
     title: 'Public Art',
     caption: '',
     url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/IMG_20150118_122828_small.jpg',
@@ -158,7 +158,7 @@
     
   }
 
-    var Skyline = {
+   {
     title: 'Skyline, New York City',
     caption: '',
     url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20150501_200113_small.jpg',
@@ -166,7 +166,7 @@
     
   }
 
-    var Subway = {
+  {
     title: 'Subway - Years of Infrastructure, New York City',
     caption: '',
     url: 'http://trulydietz.com/home/wp-content/uploads/2014/10/PSX_20140926_213329.jpg',
@@ -174,7 +174,7 @@
     
   }
 
-    var MoveableChairs= {
+   {
     title: 'Moveable Chairs- New York City',
     caption: '',
     url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140831_012614_small.jpg',
@@ -182,26 +182,14 @@
     
   }
 
-    var Sunset= {
+  {
     title: 'Sunset Over the Hudson',
     caption: '',
     url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140831_012405_small.jpg',
     geolocation: [40.733161,-74.010901],
     
   }
-var galleyimages = [];
-
-galleyimages[0] = BrooklynBridge;
-galleyimages[1] = CentralPark;
-galleyimages[2] = Gaustavino;
-galleyimages[3] = LowerEastSide;
-galleyimages[4] = DelancyStreet;
-galleyimages[5] = PublicArt;
-galleyimages[6] = Skyline;
-galleyimages[7] = Subway;
-galleyimages[8] = MoveableChairs;
-galleyimages[9] = Sunset;
-
+]
   // console.log(galleyimages.CentralPark.title);
 
 galleyimages.forEach(function(galleryimages) {
@@ -216,20 +204,23 @@ var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
 });
   map.addLayer(layer)
-  // var myMapData = [
-  //   {
-  //     name: "Joe's Pizza",
-  //     coord: [40.699542,-73.993767]
-  //   },
-  //   {
-  //     name: "Percy's Pizza",
-  //     coord: [40.729178,-74.001390]
-  //   },
-  //   {
-  //     name: "Pauly Gee's",
-  //     coord: [40.729600, -73.958695]
-  //   },
-  // ]
+  var myMapData = [
+    {
+      name: "Sunset Over the Hudson",
+      coord: [40.733161,-74.010901],
+      url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140831_012405_small.jpg',
+    },
+    {
+      name: "Moveable Chairs- New York City",
+      coord: [40.742786,-74.008327],
+      url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140831_012614_small.jpg',
+    },
+    {
+      name: "Subway - Years of Infrastructure, New York City",
+      coord: [40.657592,-73.931465],
+      url: 'http://trulydietz.com/home/wp-content/uploads/2014/10/PSX_20140926_213329.jpg'
+    },
+  ]
 
   // var eastRiver = [40.706913,-73.987513];
   // var upperWestSide = [40.788129,-73.974509];
@@ -241,15 +232,15 @@ var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.
   // marker.bindPopup("<b>Hello world!</b><br>I am a popup.")
   //Now let's use our custom-made array to make many markers
 
-  // myMapData.forEach(function(element) {
-  //   var marker = L.marker(element.coord).addTo(map);
-  //   marker.bindPopup("<b>Hello world!</b><br>I am " + element.name)
-  // });
-
-  galleryimages.forEach(function(element) {
-    var marker = L.marker(element.geolocation).addTo(map);
-    marker.bindPopup("<b>Hello world!</b><br>I am " + element.title)
+  myMapData.forEach(function(element) {
+    var marker = L.marker(element.coord).addTo(map);
+    marker.bindPopup(element.name + "<b> </b>" + '<div class ="galleryimg">' + "<img src =" + url + "/>" +  '</div>')
   });
+
+  // galleryimages.forEach(function(element) {
+  //   var marker = L.marker(element.geolocation).addTo(map);
+  //   marker.bindPopup("<b>Hello world!</b><br>I am " + element.title)
+  // });
 
   var panOptions = {
     animate: true,
@@ -264,7 +255,7 @@ var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.
     //     map.panTo(upperWestSide, panOptions);
     //   }
     // });
-    
+
   </script>
 </body>
 </html>
