@@ -174,7 +174,7 @@ var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.
 
   galleryimages.forEach(function(element) {
     var marker = L.marker(element.geolocation).addTo(map);
-    marker.bindPopup(element.title + "<b> </b>" + '<div class ="galleryimg">' + "<img src =" + element.url + " width="300" height="300"/>" + 
+    marker.bindPopup(element.title + "<b> </b>" + '<div class ="galleryimg">' + "<img src =" + element.url + " width='300' height='300'/>" + 
      '</div>')
   });
 
