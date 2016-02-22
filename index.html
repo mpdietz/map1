@@ -205,7 +205,7 @@ galleyimages[9] = Sunset;
   // console.log(galleyimages.CentralPark.title);
 
 galleyimages.forEach(function(galleryimages) {
-    $('#galleyimages').append('<div class ="galleryimg">' + '<img src =' + galleyimages.url + '>' + '</div>');
+    $('#galleyimages').append('<div class ="galleryimg">' + '<img src =' + galleyimages.url + '/>' + '</div>');
   });
 
 
@@ -215,7 +215,7 @@ var map = L.map('myMap').setView([40.7127837, -74.0059413], 11);
 var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
 });
-  // map.addLayer(layer)
+  map.addLayer(layer)
   // var myMapData = [
   //   {
   //     name: "Joe's Pizza",
@@ -231,10 +231,9 @@ var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.
   //   },
   // ]
 
-
-  var eastRiver = [40.706913,-73.987513];
-  var upperWestSide = [40.788129,-73.974509];
-  var myZoom = 13;
+  // var eastRiver = [40.706913,-73.987513];
+  // var upperWestSide = [40.788129,-73.974509];
+  // var myZoom = 13;
   //now the fun stuff:  leaflet!
 
   // //Let's add a marker
@@ -252,7 +251,6 @@ var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.
     marker.bindPopup("<b>Hello world!</b><br>I am " + element.title)
   });
 
-
   var panOptions = {
     animate: true,
     duration: 2
@@ -266,6 +264,7 @@ var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.
     //     map.panTo(upperWestSide, panOptions);
     //   }
     // });
+    
   </script>
 </body>
 </html>
