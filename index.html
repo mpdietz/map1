@@ -242,7 +242,7 @@ var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.
 
   galleryimages.forEach(function(element) {
     var marker = L.marker(element.geolocation).addTo(map);
-    marker.bindPopup("<b>Hello world!</b><br>I am " + galleyimages.title)
+    marker.bindPopup("<b>Hello world!</b><br>I am " + element.title)
   });
 
 
