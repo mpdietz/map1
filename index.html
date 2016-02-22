@@ -49,67 +49,39 @@
   <h1>Check out these items that I loaded from an array:</h1>
   <div id='galleryimg'></div>
 
-<!-- 
-  <button id="one" class="myButton">One!</button>
-  <button id="two" class="myButton">Two!</button>
- -->
+
   <div id="myMap"></div>
 
 
   <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   <script type="text/javascript">
-  // var myName = 'Chris'; //type string
-  // var firstNumber = 5; //type number
-  // var secondNumber = 10; //type number
-  // var notActuallyANumber = '5'; //type string
-  // console.log(typeof(myName)); //log to the console the type of myName (string)
-  // console.log(typeof(firstNumber));
-  // console.log('notActuallyANumber is of type ',typeof(notActuallyANumber));
-  // var convertedString = parseInt(notActuallyANumber);
-  // console.log('convertedString is of type ',typeof(convertedString));
-  // //functions
-  // //this function accepts a number and adds 5 to it.
-  // function addFive( number ) {
-  //   console.log('Running function addFive()...');
-  //   var typeOfInput = typeof(number);
-  //   console.log(typeOfInput);
-  //   if ( typeOfInput == 'number') {
-  //     return number + 5 ;
-  //   } else {
-  //     //alert('Someone tried to call addFive() but did not pass a number!')
-  //   }
-  //   console.log('The number passed in was ', number)
-    
-  // }
-  // var output = addFive(5);
-  // console.log('Output: ', output);
-  // var output2 = addFive('five');
-  // console.log('Output: ', output2);
-  // //arrays
-  // var myArray = ['apple','orange','banana',5,12];  
-  // console.log(myArray);
-  // //how to call an element in an array
-  // var firstElement = myArray[1];
-  // console.log('2nd:',firstElement);
-  // //loop  "walk the array"
-  // myArray.forEach(function(item) {
-  //   console.log('walking the array', item);
-  //   $('#arrayItems').append('<div class="arrayItem">' + item + '</div><br/>');
-  // });
-  // //objects
-  // //object for Chris Whong
-  // var myObject = {
-  //   firstName: 'Chris',
-  //   lastName: 'Whong',
-  //   age: 35,
-  //   studied: 'Urban Planning',
-  //   students: [
-  //     'Felix',
-  //     'Ashley'
-  //   ]
-  // }
-  // console.log(myObject.students[1]);
+
+
+  //CartoDB Basemap
+var map = L.map('myMap').setView([40.7127837, -74.0059413], 11);
+
+var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+});
+  map.addLayer(layer)
+  var myMapData = [
+    {
+      name: "Sunset Over the Hudson",
+      coord: [40.733161,-74.010901],
+      url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140831_012405_small.jpg',
+    },
+    {
+      name: "Moveable Chairs- New York City",
+      coord: [40.742786,-74.008327],
+      url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140831_012614_small.jpg',
+    },
+    {
+      name: "Subway - Years of Infrastructure, New York City",
+      coord: [40.657592,-73.931465],
+      url: 'http://trulydietz.com/home/wp-content/uploads/2014/10/PSX_20140926_213329.jpg'
+    },
+  ]
 
   var galleyimages = [
 
@@ -190,47 +162,10 @@
     
   }
 ]
-  // console.log(galleyimages.CentralPark.title);
 
-galleyimages.forEach(function(galleryimages) {
-    $('#galleyimages').append('<div class ="galleryimg">' + '<img src =' + galleyimages.url + '/>' + '</div>');
-  });
-
-
-  //CartoDB Basemap
-var map = L.map('myMap').setView([40.7127837, -74.0059413], 11);
-
-var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
-});
-  map.addLayer(layer)
-  var myMapData = [
-    {
-      name: "Sunset Over the Hudson",
-      coord: [40.733161,-74.010901],
-      url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140831_012405_small.jpg',
-    },
-    {
-      name: "Moveable Chairs- New York City",
-      coord: [40.742786,-74.008327],
-      url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140831_012614_small.jpg',
-    },
-    {
-      name: "Subway - Years of Infrastructure, New York City",
-      coord: [40.657592,-73.931465],
-      url: 'http://trulydietz.com/home/wp-content/uploads/2014/10/PSX_20140926_213329.jpg'
-    },
-  ]
-
-  // var eastRiver = [40.706913,-73.987513];
-  // var upperWestSide = [40.788129,-73.974509];
-  // var myZoom = 13;
-  //now the fun stuff:  leaflet!
-
-  // //Let's add a marker
-  // var marker = L.marker([40.768058,-73.981891]).addTo(map);
-  // marker.bindPopup("<b>Hello world!</b><br>I am a popup.")
-  //Now let's use our custom-made array to make many markers
+// galleyimages.forEach(function(galleryimages) {
+//     $('#galleyimages').append('<div class ="galleryimg">' + '<img src =' + galleyimages.url + '/>' + '</div>');
+//   });
 
   // myMapData.forEach(function(element) {
   //   var marker = L.marker(element.coord).addTo(map);
