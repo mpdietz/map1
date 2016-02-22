@@ -35,12 +35,19 @@
       border-radius: 10px;
       margin-right: 10px;
     }
+
+    .galleryimg{
+
+      width: "300"; 
+      height:"300";
+     }
+
   </style>
 </head>
 
 <body>
   <h1>Check out these items that I loaded from an array:</h1>
-  <div id='arrayItems'></div>
+  <div id='galleryimg'></div>
 
 <!-- 
   <button id="one" class="myButton">One!</button>
@@ -208,21 +215,21 @@ var map = L.map('myMap').setView([40.7127837, -74.0059413], 11);
 var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
 });
-  map.addLayer(layer)
-  var myMapData = [
-    {
-      name: "Joe's Pizza",
-      coord: [40.699542,-73.993767]
-    },
-    {
-      name: "Percy's Pizza",
-      coord: [40.729178,-74.001390]
-    },
-    {
-      name: "Pauly Gee's",
-      coord: [40.729600, -73.958695]
-    },
-  ]
+  // map.addLayer(layer)
+  // var myMapData = [
+  //   {
+  //     name: "Joe's Pizza",
+  //     coord: [40.699542,-73.993767]
+  //   },
+  //   {
+  //     name: "Percy's Pizza",
+  //     coord: [40.729178,-74.001390]
+  //   },
+  //   {
+  //     name: "Pauly Gee's",
+  //     coord: [40.729600, -73.958695]
+  //   },
+  // ]
 
 
   var eastRiver = [40.706913,-73.987513];
