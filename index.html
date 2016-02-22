@@ -203,12 +203,12 @@ galleyimages.forEach(function(galleryimages) {
 
 
   //CartoDB Basemap
-  var map = L.map('myMap').setView([40.7127837, -74.0059413], 11);
+var map = L.map('myMap').setView([40.7127837, -74.0059413], 11);
 
 var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
 });
-
+  map.addLayer(layer)
   var myMapData = [
     {
       name: "Joe's Pizza",
@@ -223,20 +223,13 @@ var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.
       coord: [40.729600, -73.958695]
     },
   ]
-//   //Stamen Watercolor Basemap
-//   var Stamen_Watercolor = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
-//   attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-//   subdomains: 'abcd',
-//   minZoom: 1,
-//   maxZoom: 16,
-//   ext: 'png'
-// });
+
+
   var eastRiver = [40.706913,-73.987513];
   var upperWestSide = [40.788129,-73.974509];
   var myZoom = 13;
   //now the fun stuff:  leaflet!
-  var map = L.map('myMap').setView(eastRiver, myZoom);
-  map.addLayer(layer)
+
   // //Let's add a marker
   // var marker = L.marker([40.768058,-73.981891]).addTo(map);
   // marker.bindPopup("<b>Hello world!</b><br>I am a popup.")
