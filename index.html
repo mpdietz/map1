@@ -138,7 +138,7 @@
 ]
 
 galleryimages.forEach(function(galleryimages) {
-    $('#galleryimages').append('<div class ="galleryimg">' + '<img src =' + galleryimages.url + '/>' + '</div>');
+    $('#galleryimg').append('<div class ="galleryimg">' + '<img src =' + galleryimages.url + " width='300' height='300'/>" + '</div>');
   });
 
 
@@ -182,15 +182,9 @@ var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.
     animate: true,
     duration: 2
   }
-    // $(".myButton").click(function() {
-    //   if($(this).attr('id') == 'one' ) {
-    //     $(this).css('background-color','green');
-    //     map.panTo(eastRiver, panOptions);
-    //   } else {
-    //     $(this).css('background-color','red');
-    //     map.panTo(upperWestSide, panOptions);
-    //   }
-    // });
+    marker.click(function() {
+        map.panTo($(this).url, panOptions);
+    });
 
   </script>
 </body>
