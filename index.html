@@ -138,7 +138,7 @@
 ]
 
 galleryimages.forEach(function(element) {
-    $('#gallery').append('<img src =' + element.url + " width='300' height='300'/>" + " ");
+    $('#gallery').append('<img src =' + element.url + " width='150' height='150'/>" + " ");
   });
 
 
@@ -186,6 +186,30 @@ map.addLayer(layer)
     animate: true,
     duration: 2
   }
+
+  $(function () {
+
+        $('.gallery img').hover(function() {
+           $(this).fadeTo(500,.2)
+
+        }, 
+        function() {
+           $(this).fadeTo(500,1)
+
+        });
+    });
+
+
+// $('img[src]').hover(function()
+//    {
+//    $(this.data[src]).fadeIn("slow");
+//    },
+//    function ()
+//      {
+//    $(this.data[src]).fadeOut();    
+//      });
+// });
+
     // marker.click(function() {
     //     map.panTo($(this).url, panOptions);
     // });
