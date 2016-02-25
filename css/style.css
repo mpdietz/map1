@@ -1,0 +1,30 @@
+html {
+      font-family: sans-serif;
+    }
+/*    .arrayItem {
+      color: steelblue;
+      font-size: 24px;
+    }*/
+    #myMap {
+      width: 100%;
+      height: 300px;
+      background-color: gray;
+    }
+    button {
+      width: 200px;
+      height: 73px;
+      margin-bottom: 50px;
+      font-size: 24px;
+      border-radius: 10px;
+      margin-right: 10px;
+    }
+
+    .galleryimg{
+
+      width: "300"; 
+      height:"300";
+     }
+
+     #gallery {
+      width: 100%;
+     }
