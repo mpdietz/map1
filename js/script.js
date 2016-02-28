@@ -153,7 +153,7 @@ map.addLayer(layer)
       
 
   galleryimg.click(function() {
-    map.panTo(galleryimg.url),panOptions);
+    map.panTo(galleryimg.geolocation),panOptions);
   });
 
     // marker.click(function() {
