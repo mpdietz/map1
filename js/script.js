@@ -112,32 +112,49 @@ map.addLayer(layer)
         //   marker.bindPopup(element.name + "<b> </b>" + '<div class ="galleryimg">' + "<img src =" + element.url + ">" +  '</div>')
         // });
 
-  galleryimages.forEach(function(element) {
-    var marker = L.marker(element.geolocation).addTo(map);
-    marker.bindPopup(element.title + "<b> </b>" + '<div class ="galleryimg">' + "<img src =" + element.url + " width='300' height='300'/>" + 
-     '</div>')
-  });
-
   var panOptions = {
     animate: true,
     duration: 2
   }
 
-  $(function () {
-
-        $('.gallery img').hover(function() {
-           $(this).fadeTo(500,.2)
-
-        }, 
-        function() {
-           $(this).fadeTo(500,1)
-
-        });
-    });
-
-  // galleryimg.click(function() {
-  //   map.panTo($galleryimg.url),panOptions);
+  // galleryimages.forEach(function(element) {
+  // var marker = L.marker(element.geolocation).addTo(map);
+  // marker.bindPopup(element.title + "<b> </b>" + '<div class ="galleryimg">' + "<img src =" + element.url + " width='300' height='300'/>" + 
+  //    '</div>')
+  // element.hover(function()){
+  //     $(this).fadeTo(500,.2)
+  //   },function() {
+  //          $(this).fadeTo(500,1)
+  //       });
+  // element.click(function(element) {
+  //      map.panto(element.geolocation, panOptions)
+  //   }
   // });
+
+  // $(function () {
+
+  //       $('.gallery img').hover(function() {
+  //          $(this).fadeTo(500,.2)
+  //       }, 
+  //       function() {
+  //          $(this).fadeTo(500,1)
+  //       });
+  //   });
+
+  // $(function () {
+
+  //       $('.gallery img').click(function(element) {
+  //         map.panto(element.geolocation, panOptions)
+  //       }, 
+  //       function() {
+  //          $(this).fadeTo(500,1)
+  //       });
+  //   });
+      
+
+  galleryimg.click(function() {
+    map.panTo(galleryimg.url),panOptions);
+  });
 
     // marker.click(function() {
     //     map.panTo($(this).url, panOptions);
