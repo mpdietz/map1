@@ -87,50 +87,20 @@ var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.
 
 map.addLayer(layer)
 
-      // Good for testing map markers
-        // 
-        // var myMapData = [
-        //   {
-        //     name: "Sunset Over the Hudson",
-        //     coord: [40.733161,-74.010901],
-        //     url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140831_012405_small.jpg',
-        //   },
-        //   {
-        //     name: "Moveable Chairs- New York City",
-        //     coord: [40.742786,-74.008327],
-        //     url: 'http://trulydietz.com/home/wp-content/uploads/2015/05/PSX_20140831_012614_small.jpg',
-        //   },
-        //   {
-        //     name: "Subway - Years of Infrastructure, New York City",
-        //     coord: [40.657592,-73.931465],
-        //     url: 'http://trulydietz.com/home/wp-content/uploads/2014/10/PSX_20140926_213329.jpg'
-        //   },
-        // ]
-
-        // myMapData.forEach(function(element) {
-        //   var marker = L.marker(element.coord).addTo(map);
-        //   marker.bindPopup(element.name + "<b> </b>" + '<div class ="galleryimg">' + "<img src =" + element.url + ">" +  '</div>')
-        // });
 
   var panOptions = {
     animate: true,
     duration: 2
   }
 
-  // galleryimages.forEach(function(element) {
-  // var marker = L.marker(element.geolocation).addTo(map);
-  // marker.bindPopup(element.title + "<b> </b>" + '<div class ="galleryimg">' + "<img src =" + element.url + " width='300' height='300'/>" + 
-  //    '</div>')
-  // element.hover(function()){
-  //     $(this).fadeTo(500,.2)
-  //   },function() {
-  //          $(this).fadeTo(500,1)
-  //       });
-  // element.click(function(element) {
-  //      map.panto(element.geolocation, panOptions)
-  //   }
-  // });
+  galleryimages.forEach(function(element) {
+  var marker = L.marker(element.geolocation).addTo(map);
+  marker.bindPopup(element.title + "<br> </br>" + '<div class ="galleryimg">' + "<img src =" + element.url + " width='300' height='300'/>" + 
+     '</div>')
+  });
 
+
+      
   // $(function () {
 
   //       $('.gallery img').hover(function() {
@@ -152,10 +122,6 @@ map.addLayer(layer)
   //   });
       
 
-  galleryimg.click(function() {
-    map.panTo(galleryimg.geolocation),panOptions);
-  });
-
-    // marker.click(function() {
-    //     map.panTo($(this).url, panOptions);
-    // });
+  // galleryimg.click(function() {
+  //   map.panTo(galleryimg.geolocation),panOptions)
+  // });
